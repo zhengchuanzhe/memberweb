@@ -1,0 +1,76 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-transaction_date" class="control-label col-xs-12 col-sm-2">{:__('Transaction_date')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-transaction_date" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[transaction_date]" type="text" value="{$row.transaction_date}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-serial_number" class="control-label col-xs-12 col-sm-2">{:__('Serial_number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-serial_number" class="form-control" name="row[serial_number]" type="text" value="{$row.serial_number}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_code" class="control-label col-xs-12 col-sm-2">{:__('User_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_code" data-rule="required" class="form-control" name="row[user_code]" type="text" value="{$row.user_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bonus_type" class="control-label col-xs-12 col-sm-2">{:__('Bonus_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bonus_type" data-rule="required" class="form-control" name="row[bonus_type]" type="number" value="{$row.bonus_type}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-trade_direction" class="control-label col-xs-12 col-sm-2">{:__('Trade_direction')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-trade_direction" data-rule="required" class="form-control" name="row[trade_direction]" type="number" value="{$row.trade_direction}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-plan_money" class="control-label col-xs-12 col-sm-2">{:__('Plan_money')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-plan_money" data-rule="required" class="form-control" step="0.01" name="row[plan_money]" type="number" value="{$row.plan_money}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-reality_money" class="control-label col-xs-12 col-sm-2">{:__('Reality_money')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-reality_money" data-rule="required" class="form-control" step="0.01" name="row[reality_money]" type="number" value="{$row.reality_money}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-adjust_user_code" class="control-label col-xs-12 col-sm-2">{:__('Adjust_user_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-adjust_user_code" class="form-control" name="row[adjust_user_code]" type="text" value="{$row.adjust_user_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-bookkeeping_user_code" class="control-label col-xs-12 col-sm-2">{:__('Bookkeeping_user_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-bookkeeping_user_code" class="form-control" name="row[bookkeeping_user_code]" type="text" value="{$row.bookkeeping_user_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-entry_time" class="control-label col-xs-12 col-sm-2">{:__('Entry_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-entry_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[entry_time]" type="text" value="{$row.entry_time}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-mark" class="control-label col-xs-12 col-sm-2">{:__('Mark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-mark" class="form-control " rows="5" name="row[mark]" cols="50">{$row.mark}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

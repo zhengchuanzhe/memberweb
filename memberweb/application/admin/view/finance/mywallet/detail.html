@@ -1,0 +1,63 @@
+{volist name="tranflows" id="vo"}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    {switch name="vo.account_type"}
+                        {case value="0"}
+                            {:__('cash')}
+                        {/case}
+                        {case value="1"}
+                            {:__('bonus')}
+                        {/case}
+                        {case value="2"}
+                            {:__('shopping')}
+                        {/case}
+                        {case value="3"}
+                            {:__('Registered integral')}
+                        {/case}
+                        {default /}
+                    {/switch}
+                    
+                    {if condition="($vo.mark neq '') AND ($vo.mark neq null) "}
+                        （{$vo.mark}）
+                    {/if}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="50%">{:__('in or out')}</td>
+                <td>
+                {switch name="vo.trade_direction"}
+                    {case value="0"}- {/case}
+                    {case value="1"}+ {/case}
+                    {default /}
+                {/switch}
+                    {$vo.transaction_amount}
+                </td>
+            </tr>
+            <tr>
+                <td width="50%">{:__('before balance')}</td>
+                <td>
+                    {$vo.before_balance}
+                </td>
+            </tr>
+            <tr>
+                <td width="50%">{:__('after balance')}</td>
+                <td>
+                    {$vo.after_balance}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{/volist}
+<div class="hide layer-footer">
+    <label class="control-label col-xs-12 col-sm-2">
+    </label>
+    <div class="col-xs-12 col-sm-8">
+        <button class="btn btn-primary btn-embossed btn-close" onclick="Layer.closeAll();" type="reset">
+            {:__('Close')}
+        </button>
+    </div>
+</div>

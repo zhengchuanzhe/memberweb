@@ -1,0 +1,95 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-id" class="control-label col-xs-12 col-sm-2">{:__('Id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-id" data-rule="required" class="form-control" name="row[id]" readonly="readonly" type="text" value="{$row.id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-application_user_code" class="control-label col-xs-12 col-sm-2">{:__('Application_user_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-application_user_code" data-rule="required" class="form-control" name="row[application_user_code]" readonly="readonly" type="text" value="{$row.application_user_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-old_grade_code" class="control-label col-xs-12 col-sm-2">{:__('Old_grade_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+             <select class="form-control selectpicker" disabled="disabled" name="row[old_grade_code]" data-rule="required">
+                {foreach name="gradeList" item="vo"}
+                    <option value="{$vo.grade_code}" {eq name="$vo.grade_code" value="$row.old_grade_code"}selected="selected"{/eq}>{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-new_grade_code" class="control-label col-xs-12 col-sm-2">{:__('New_grade_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+             <select class="form-control selectpicker" disabled="disabled" name="row[new_grade_code]" data-rule="required">
+                {foreach name="gradeList" item="vo"}
+                    <option value="{$vo.grade_code}" {eq name="$vo.grade_code" value="$row.new_grade_code"} selected="selected"{/eq}>{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-application_time" class="control-label col-xs-12 col-sm-2">{:__('Application_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-application_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[application_time]" readonly="readonly"  type="text" value="{$row.application_time}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-application_mark" class="control-label col-xs-12 col-sm-2">{:__('Application_mark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-application_mark" class="form-control " readonly="readonly"  rows="5" name="row[application_mark]" cols="50">{$row.application_mark}</textarea>
+        </div>
+    </div>
+    <!-- 待处理 -->
+    {if $row['state']=='0'}
+    <div class="form-group">
+        <label for="c-hand_mark" class="control-label col-xs-12 col-sm-2">{:__('Hand_mark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-hand_mark" class="form-control " rows="5" name="row[hand_mark]" cols="50">{$row.hand_mark}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-xs-12 col-sm-4">
+            <a id="agree" class="btn btn-info">{:__('Agree')}</a>
+        </div>
+        <div class="control-label col-xs-12 col-sm-2">
+            <a id="refuse" class="btn btn-info">{:__('Refuse')}</a>
+        </div>
+    </div>
+    {else /}
+    <!-- 已处理-->
+    <div class="form-group">
+        <label for="c-hand_user_code" class="control-label col-xs-12 col-sm-2">{:__('Hand_user_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hand_user_code" class="form-control" name="row[hand_user_code]" readonly="readonly" type="text" value="{$row.hand_user_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-hand_time" class="control-label col-xs-12 col-sm-2">{:__('Hand_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hand_time" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[hand_time]" readonly="readonly"  type="text" value="{$row.hand_time}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-hand_mark" class="control-label col-xs-12 col-sm-2">{:__('Hand_mark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-hand_mark" class="form-control " readonly="readonly"  rows="5" name="row[hand_mark]" cols="50">{$row.hand_mark}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-state" class="control-label col-xs-12 col-sm-2">{:__('State')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            {foreach name="stateList" item="vo"}
+            <label for="row[state]-{$key}"><input id="row[state]-{$key}" name="row[state]" type="radio" value="{$key}" {in name="key" value="$row.state"}checked{/in} /> {$vo}</label> 
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    {/if}
+</form>

@@ -1,0 +1,28 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-title" class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" data-rule="required;length(~30)" class="form-control" name="row[title]" type="text" value="{$row.title}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-user_code" class="control-label col-xs-12 col-sm-2">{:__('User_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_code" data-rule="required" class="form-control" name="row[user_code]" type="text" value="{$row.user_code}" readonly="true">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-content" class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" data-rule="required" class="form-control editor" rows="5" name="row[content]" cols="50">{$row.content}</textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

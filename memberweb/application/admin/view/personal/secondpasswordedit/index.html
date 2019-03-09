@@ -1,0 +1,27 @@
+<form id="register-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="second_password_old" class="control-label col-xs-12 col-sm-2">{:__('Old password')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="password" class="form-control" id="second_password_old" name="second_password_old" autocomplete="off" value="" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="second_password_new" class="control-label col-xs-12 col-sm-2">{:__('New password')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="password" class="form-control" id="second_password_new" name="second_password_new" autocomplete="off" value="" data-rule="{:__('New password')}: required; password" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="second_password_verify" class="control-label col-xs-12 col-sm-2">{:__('Verify password')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="password" class="form-control" id="second_password_verify" name="second_password_verify" autocomplete="off" value="" data-rule="{:__('Verify password')}: required; match(second_password_new)" />
+        </div>
+    </div>
+    <div class="form-group layer-footer" style="display: block;">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

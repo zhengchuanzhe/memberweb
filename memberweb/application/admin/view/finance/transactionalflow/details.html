@@ -1,0 +1,50 @@
+
+    <h3>{:__('Business account')}:</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>{:__('Account number')}</th>
+            <th>{:__('Account name')}</th>
+            <th>{:__('Trade direction')}</th>
+            <th>{:__('Transaction amount')}</th>
+            <th>{:__('Before balance')}</th>
+            <th>{:__('After balance')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $business_info as $vo}
+        <tr>
+            <td>{$vo.account_number}</td>
+            <td>{$vo.account_name}</td>
+            <td>{:__('Direction '.$vo.trade_direction)}</td>
+            <td>{$vo.transaction_amount}</td>
+            <td>{$vo.before_balance}</td>
+            <td>{$vo.after_balance}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+
+    <h3>{:__('Personal account')}:</h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>{:__('Account type')}</th>
+            <th>{:__('Trade direction')}</th>
+            <th>{:__('Transaction amount')}</th>
+            <th>{:__('Before balance')}</th>
+            <th>{:__('After balance')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $personal_info as $vo}
+        <tr>
+            <td>{:__('Type '.$vo.account_type)}</td>
+            <td>{:__('Direction '.$vo.trade_direction)}</td>
+            <td>{$vo.transaction_amount}</td>
+            <td>{$vo.before_balance}</td>
+            <td>{$vo.after_balance}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>

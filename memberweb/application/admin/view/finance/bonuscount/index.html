@@ -1,0 +1,98 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-3 col-sm-3">
+            <div class="panel panel-default panel-intro">
+                <div class="panel-heading">
+                    <div class="panel-lead">
+                        <em>
+                            {:__('Account')}
+                        </em>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td width="50%">
+                                    {:__('Total count bonus')}：
+                                </td>
+                                <td>
+                                    <input class="form-control" disabled="" id="total_count_bonus" type="text" value="">
+                                    </input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%">
+                                    {:__('Total real bonus')}：
+                                </td>
+                                <td>
+                                    <input class="form-control" disabled="" id="total_real_bonus" type="text" value="">
+                                    </input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%">
+                                    {:__('System K value')}：
+                                </td>
+                                <td>
+                                    <input class="form-control" disabled="" id="system_k_value" type="text" value="{$system_k_value}">
+                                    </input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%">
+                                    {:__('K value')}：
+                                </td>
+                                <td>
+                                    <input class="form-control" disabled="" id="k_value" type="text">
+                                    </input>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%">
+                                    {:__('Last account date')}：
+                                </td>
+                                <td>
+                                    <input class="form-control" disabled="" id="last_account_date" type="text" value="">
+                                    </input>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <form class="form-horizontal form-ajax" role="form">
+                        <div class="form-group" style="margin-left: -8px;margin-right: 0;">
+                             <label for="service_centre_code" class="control-label col-xs-12 col-sm-6"  style="text-align:left">{:__('Now account date')}:</label>
+                            <div class="col-xs-12 col-sm-6" >
+                                <input id="deadline_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:00:00" data-use-current="true" name="row[application_time]"  type="text" />
+                            </div>
+                        </div>
+                    </form>
+                    <button class="btn btn-info btn-embossed" id="btn_calculate">
+                        {:__('Calculate')}
+                    </button>
+                    <button class="btn btn-info btn-embossed" id="btn_suggest">
+                        {:__('Suggest bonus')}
+                    </button>
+                    <button class="btn btn-success btn-embossed" id="btn_giveout">
+                        {:__('Give out')}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-9 col-sm-9">
+            <div class="panel panel-default panel-intro" style="background: #f1f4f6;padding-top: 0;padding-bottom: 0;box-shadow: none;">
+                <div class="tab-content" id="myTabContent" style="background:#fff;padding:15px;">
+                    <div class="tab-pane fade active in" id="one">
+                        <div class="widget-body no-padding">
+                            <div class="toolbar" id="toolbar">
+                                {:build_toolbar('refresh')}
+                            </div>
+                            <table class="table table-striped table-bordered table-hover" id="table">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-application_user_code" class="control-label col-xs-12 col-sm-2">{:__('Application_user_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-application_user_code" data-rule="required" class="form-control" name="row[application_user_code]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-message_content" class="control-label col-xs-12 col-sm-2">{:__('Message_content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-message_content" class="form-control editor" rows="5" name="row[message_content]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-old_grade_code" class="control-label col-xs-12 col-sm-2">{:__('Old_grade_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-old_grade_code" data-rule="required" class="form-control" name="row[old_grade_code]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-new_grade_code" class="control-label col-xs-12 col-sm-2">{:__('New_grade_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-new_grade_code" data-rule="required" class="form-control" name="row[new_grade_code]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-application_time" class="control-label col-xs-12 col-sm-2">{:__('Application_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-application_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[application_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-application_mark" class="control-label col-xs-12 col-sm-2">{:__('Application_mark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-application_mark" class="form-control " rows="5" name="row[application_mark]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-hand_user_code" class="control-label col-xs-12 col-sm-2">{:__('Hand_user_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hand_user_code" data-rule="required" class="form-control" name="row[hand_user_code]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-hand_time" class="control-label col-xs-12 col-sm-2">{:__('Hand_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hand_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[hand_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-hand_mark" class="control-label col-xs-12 col-sm-2">{:__('Hand_mark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-hand_mark" class="form-control " rows="5" name="row[hand_mark]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-state" class="control-label col-xs-12 col-sm-2">{:__('State')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-state" data-rule="required" class="form-control" name="row[state]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-Application_is_delete" class="control-label col-xs-12 col-sm-2">{:__('Application_is_delete')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-Application_is_delete" data-rule="required" class="form-control" name="row[Application_is_delete]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-hand_is_delete" class="control-label col-xs-12 col-sm-2">{:__('Hand_is_delete')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hand_is_delete" data-rule="required" class="form-control" name="row[hand_is_delete]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

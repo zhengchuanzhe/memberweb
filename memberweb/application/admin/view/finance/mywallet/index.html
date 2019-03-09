@@ -1,0 +1,243 @@
+<style type="text/css">
+    .sm-st-icon {
+        width:60px;
+        height:60px;
+        display:inline-block;
+        line-height:60px;
+        text-align:center;
+        font-size:30px;
+        background:#eee;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        float:left;
+        margin-right:10px;
+        color:#fff;
+    }
+    .sm-st-icon-small {
+        width:28px;
+        height:24px;
+        display:inline-block;
+        line-height:24px;
+        text-align:center;
+        font-size:15px;
+        background:#eee;
+        -webkit-border-radius:2px;
+        -moz-border-radius:2px;
+        border-radius:2px;
+        float:left;
+        margin-right:4px;
+        color:#fff;
+    }
+
+    .sm-st-info {
+        font-size:12px;
+        padding-top:2px;
+    }
+    .sm-st-info span {
+        display:block;
+        font-size:24px;
+        font-weight:600;
+    }
+
+    .st-red {
+        background-color: #F05050;
+    }
+    .st-green {
+        background-color: #27C24C;
+    }
+    .st-violet {
+        background-color: #7266ba;
+    }
+    .st-blue {
+        background-color: #23b7e5;
+    }
+    h4 {
+        margin-top: 5px;
+    }
+    h4 .label{
+        font-size: 20px;
+    }
+</style>
+<div class="row animated fadeInRight">
+    <div class="col-md-12 col-xs-12">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">
+                    {:__('My balance')}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-red">
+                                <i class="fa fa-money">
+                                </i>
+                            </span>
+                            <div class="sm-st-info">
+                                <span>
+                                    ￥{$totalcash}
+                                </span>
+                                <h4>
+                                    {:__('cash')}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-violet">
+                                <i class="fa fa-rmb">
+                                </i>
+                            </span>
+                            <div class="sm-st-info">
+                                <span>
+                                    ￥{$totalbonus}
+                                </span>
+                                <h4>
+                                    {:__('bonus')}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-green">
+                                <i class="fa fa-shopping-cart">
+                                </i>
+                            </span>
+                            <div class="sm-st-info">
+                                <span>
+                                    ￥{$totalshopping}
+                                </span>
+                                <h4>
+                                    {:__('shopping')}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-sm-3 col-xs-12">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-blue">
+                                <i class="fa fa-book">
+                                </i>
+                            </span>
+                            <div class="sm-st-info">
+                                <span>
+                                    ￥{$registered_integral}
+                                </span>
+                                <h4>
+                                    {:__('Registered integral')}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12">
+                    <form class="form-inline"id="index-form" role="form" data-toggle="validator" method="POST" action="">
+                        <div class="form-group">
+                            <label for="cash_shopping_cash">{:__('cash_shopping')}——{:__('cash')}:</label>
+                            <input type="number" class="form-control" id="cash_shopping_cash" name="row[cash_shopping_cash]" value="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label for="cash_shopping_shopping">{:__('shopping')}:</label>
+                            <input type="number" class="form-control" id="cash_shopping_shopping" name="row[cash_shopping_shopping]" value="0.00" disabled>
+                        </div>
+                        <button id="change_one" type="submit" class="btn btn-default">{:__('exchange')}</button>
+                        <label>{:__('rate')}:</label><label id="rate_one">{$rate_one}</label>
+                    </form>
+                    <form class="form-inline"id="index-form" role="form" data-toggle="validator" method="POST" action="">
+                        <div class="form-group">
+                            <label for="bonus_shopping_bonus">{:__('bonus_shopping')}————{:__('bonus')}:</label>
+                            <input type="number" class="form-control" id="bonus_shopping_bonus" name="row[bonus_shopping_bonus]"  value="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label for="bonus_shopping_shopping">{:__('shopping')}:</label>
+                            <input type="number" class="form-control" id="bonus_shopping_shopping" value="0.00" disabled>
+                        </div>
+                        <button id="change_two" type="submit" class="btn btn-default">{:__('exchange')}</button>
+                        <label>{:__('rate')}:</label><label id="rate_two">{$rate_two}</label>
+                    </form>
+                    <form class="form-inline"id="index-form" role="form" data-toggle="validator" method="POST" action="">
+                        <div class="form-group">
+                            <label for="bonus_cash_bonus">{:__('bonus_cash')}—————{:__('bonus')}:</label>
+                            <input type="number" class="form-control" id="bonus_cash_bonus" name="row[bonus_cash_bonus]" value="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label for="bonus_cash_cash">&nbsp&nbsp&nbsp&nbsp{:__('cash')}:</label>
+                            <input type="number" class="form-control" id="bonus_cash_cash" name="row[bonus_cash_cash]" value="0.00" disabled>
+                        </div>
+                        <button id="change_three" type="submit" class="btn btn-default">{:__('exchange')}</button>
+                        <label>{:__('rate')}:</label><label id="rate_three">{$rate_three}</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xs-12">
+        <div class="box box-success">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#one" data-toggle="tab">{:__('History flow')}</a></li>
+                <li><a href="#two" data-toggle="tab">{:__('Personal flow')}</a></li>
+            </ul>
+            <div class="panel-body">
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="one">
+                        <div class="box-header">
+                            <h3 class="box-title">
+                                {:__('History flow')}
+                            </h3>
+                        </div>
+                        <ul class="products-list product-list-in-box">
+                            {foreach $historyTranFlow as $vo}
+                            <li class="item">
+                                <a class="btn-dialog" href="finance/mywallet/detail?nos={$vo.serial_number}" title="{:__('Tranflow detail')}">
+                                    <span class="text">
+                                        <h4>
+                                            {$vo.business_name}
+                                            <span class="label label-warning pull-right bg-red">
+                                                {$vo.transaction_amount}
+                                            </span>
+                                        </h4>
+                                    </span>
+                                    <span class="product-description">
+                                        {$vo.trading_time}
+                                    </span>
+                                    <span class="product-description">
+                                        {:__('operater')}：{$vo.operation_user_code}
+                                    </span>
+                                </a>
+                            </li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="two">
+                        <div class="col-md-12 col-xs-12">
+                            <div class="panel panel-default panel-intro">
+                                {:build_heading()}
+
+                                <div class="panel-body">
+                                    <div  class="tab-content">
+                                        <div class="tab-pane fade active in">
+                                            <div class="widget-body no-padding">
+                                                <div id="toolbar" class="toolbar">
+                                                    {:build_toolbar('refresh')}
+
+                                                </div>
+                                                <table id="table" class="table table-striped table-bordered table-hover"
+                                                       width="100%">
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

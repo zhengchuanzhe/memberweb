@@ -1,0 +1,37 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-application_user_code" class="control-label col-xs-12 col-sm-2">{:__('Application_user_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-application_user_code" data-rule="required" class="form-control" name="row[application_user_code]" readonly="readonly" type="text" value="{$user_code}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-balance" class="control-label col-xs-12 col-sm-2">{:__('Now Balance')}:</label>
+        <label id="c-balance" for="c-balance" class="control-label col-xs-12 col-sm-1" style="text-align:left;color:red">{$now_balance}</label>
+        <label for="c-rate" class="control-label col-xs-12 col-sm-2">{:__('Rate Param')}:</label>
+        <label id="c-rate" for="c-rate" class="control-label col-xs-12 col-sm-1" style="text-align:left;color:red">{$rate_param}%</label>
+        <label for="c-low_amount" class="control-label col-xs-12 col-sm-2">{:__('Low Amount')}:</label>
+        <label id="c-low_amount" for="c-low_amount" class="control-label col-xs-12 col-sm-1" style="text-align:left;color:red">{$low_amount}</label>
+        
+    </div>
+    <div class="form-group">
+        <label for="c-application_amount" class="control-label col-xs-12 col-sm-2">{:__('Application_amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-application_amount" data-rule="required" class="form-control" step="0.01" name="row[application_amount]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-poundage" class="control-label col-xs-12 col-sm-2">{:__('Poundage')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-poundage" data-rule="required" class="form-control" step="0.01" name="row[poundage]" readonly="readonly" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

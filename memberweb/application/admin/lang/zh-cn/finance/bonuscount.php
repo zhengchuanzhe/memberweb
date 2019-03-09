@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'Id'                => 'ID',
+    'Serial number'     => '流水号',
+    'User code'         => '用户编号',
+    'Referee bonus'     => '推荐奖',
+    'Sell bonus'        => '销售奖',
+    'Manage bonus'      => '管理奖',
+    'Revisit bonus'     => '重消奖',
+    'Count bonus'       => '计算奖金',
+    'Real bonus'        => '实际奖金',
+    'New real bonus'    => '新实际奖金',
+    'Total count bonus' => '总计算奖金',
+    'Total real bonus'  => '总实际奖金',
+    'Last account date' => '上次核算日期',
+    'Account'           => '核算',
+    'Calculate'         => '计算',
+    'Give out'          => '发放',
+    'Parameter error'   => '参数错误',
+    'Now account date'  =>'本次核算日期',
+    'System K value'    =>'设置k值',
+    'K value'           =>'k值',
+    'Suggest bonus'     =>'建议奖金',
+    'Mark'              =>'备注',
+    'Bouns type'        =>'奖金类型',
+];

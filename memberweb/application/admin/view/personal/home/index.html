@@ -1,0 +1,70 @@
+ <div class="row animated fadeInRight">
+    <div class="col-md-4">
+        <div class="box box-info">
+            <div class="box-header">
+                <h3 class="box-title">{:__('Personal info')}</h3>
+            </div>
+            <div class="panel-body">
+
+                <input type="hidden" id="c-avatar" name="row[avatar]" value="{$admin.avatar}" />
+                <div class="box-body box-profile">
+                    
+                    <h3 class="profile-username text-center">{$admin.user_name}</h3>
+
+                    <div class="form-group">
+                        <label for="user_name" class="control-label">{:__('User code')}:</label>
+                        <input type="text" class="form-control" name="row[user_code]" value="{$admin.user_code}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="group_name" class="control-label">{:__('Group')}:</label>
+                        <input type="text" class="form-control" name="row[group_name]" value="{$group_name}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="grade_name" class="control-label">{:__('Grade_code')}:</label>
+                        <input type="text" class="form-control" name="row[grade_name]" value="{$grade_name}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="referee_user_code" class="control-label">{:__('Referee user code')}:</label>
+                        <input type="text" class="form-control" name="row[referee_user_code]" value="{$admin.referee_user_code}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="declaration_form_code" class="control-label">{:__('Declaration form code')}:</label>
+                        <input type="text" class="form-control" name="row[declaration_form_code]" value="{$admin.declaration_form_code}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="service_centre_code" class="control-label">{:__('Service centre code')}:</label>
+                        <input type="text" class="form-control" name="row[service_centre_code]" value="{$admin.service_centre_code}" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="manage_user_code" class="control-label">{:__('Manage user code')}:</label>
+                        <input type="text" class="form-control" name="row[manage_user_code]" value="{$admin.manage_user_code}" disabled />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">{:__('Recent notice')}</h3>
+                <div class="box-tools pull-right">
+                    <a href="messageleave/notice" class="btn addtabsit">{:__('More')}</a>
+                </div>
+            </div>
+            <div class="box-body">
+                <ul class="nav nav-stacked">
+                    {foreach $noticeList as $vo}
+                        <li>
+                            <a href="messageleave/notice/details?ids={$vo.id}" class="btn-dialog" title="{:__('Notice detail')}">
+                                <span class="text">{$vo.title}</span>
+                                <span class="label label-warning pull-right">{$vo.create_time|date="Y-m-d",###}</span>
+                            </a>
+                        </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,95 @@
+<style type="text/css">
+    .sm-st-icon {
+        width:60px;
+        height:60px;
+        display:inline-block;
+        line-height:60px;
+        text-align:center;
+        font-size:30px;
+        background:#eee;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        float:left;
+        margin-right:10px;
+        color:#fff;
+    }
+    .sm-st-icon-small {
+        width:28px;
+        height:24px;
+        display:inline-block;
+        line-height:24px;
+        text-align:center;
+        font-size:15px;
+        background:#eee;
+        -webkit-border-radius:2px;
+        -moz-border-radius:2px;
+        border-radius:2px;
+        float:left;
+        margin-right:4px;
+        color:#fff;
+    }
+
+    .sm-st-info {
+        font-size:12px;
+        padding-top:2px;
+    }
+    .sm-st-info span {
+        display:block;
+        font-size:24px;
+        font-weight:600;
+    }
+
+    .st-red {
+        background-color: #F05050;
+    }
+    h4 {
+        margin-top: 5px;
+    }
+    h4 .label{
+        font-size: 20px;
+    }
+</style>
+<div class="row animated fadeInRight">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-header">
+                <h3 class="box-title">
+                    {:__('My cash')}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="sm-st clearfix">
+                            <span class="sm-st-icon st-red">
+                                <i class="fa fa-money">
+                                </i>
+                            </span>
+                            <div class="sm-st-info">
+                                <span>
+                                    ￥{$cash}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <form class="form-inline"id="index-form" role="form" data-toggle="validator" method="POST" action="">
+                        <div class="form-group">
+                            <label for="trans_member">{:__('Trans member')}:</label>
+                            <input type="text" class="form-control" id="trans_member" name="row[trans_member]" placeholder="输入会员编号" >
+                            <button id="validate" type="button" class="btn btn-default">{:__('validate')}</button>
+                            <input type="text" class="form-control" id="trans_name" name="row[trans_name]" placeholder="会员名称"disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="trans_cash">{:__('Trans cash')}:</label>
+                            <input type="number" class="form-control" id="trans_cash" name="row[cash_shopping_shopping]" placeholder="0.00">
+                            <button id="exchange" type="button" class="btn btn-default">{:__('exchange')}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

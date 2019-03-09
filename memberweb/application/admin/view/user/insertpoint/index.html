@@ -1,0 +1,151 @@
+<form id="register-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="user_code" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="radio">
+            <label ><input  name="row[application_type]" type="radio" value="sd" checked="true" />{:__('Real simple')}</label> 
+            <label ><input name="row[application_type]" type="radio" value="xd" /> {:__('Virtual single')}</label> 
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="user_code" class="control-label col-xs-12 col-sm-2">{:__('User code')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="text" class="form-control" id="user_code" name="row[user_code]" value="{$user_code}" data-rule="required;length(7)" />
+        </div>
+        <div class="col-sm-1"><a id="random" class="btn btn-info">{:__('Random')}</a></div>
+        <div class="col-sm-1"><a id="isExistCode" class="btn btn-info">{:__('Verify')}</a></div>
+    </div>
+    <div class="form-group">
+        <label for="referee_user_code" class="control-label col-xs-12 col-sm-2">{:__('Referee user code')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="text" class="form-control" id="referee_user_code" name="row[referee_user_code]" value="{$code}" data-rule="required;length(7)" />
+        </div>
+        <div class="col-sm-1"><a class="btn btn-info" id="is_referee_user_code">{:__('Verify')}</a></div>
+        <label id='referee_user_name' for="referee_user_name" class="control-label col-xs-12 col-sm-3"  style="text-align:left;color:red">{$name}</label>
+    </div>
+    <div class="form-group">
+        <label for="declaration_form_code" class="control-label col-xs-12 col-sm-2">{:__('Declaration form code')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="text" class="form-control" id="declaration_form_code" name="row[declaration_form_code]" value="{$code}" data-rule="required;length(7)" />
+        </div>
+        <div class="col-sm-1"><a class="btn btn-info" id="is_declaration_form_code">{:__('Verify')}</a></div>
+        <label id='declaration_form_name' for="declaration_form_name" class="control-label col-xs-12 col-sm-3"  style="text-align:left;color:red">{$name}</label>
+    </div>
+    <div id="d-service_centre_code" class="form-group">
+        <label for="service_centre_code" class="control-label col-xs-12 col-sm-2">{:__('Service centre code')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="text" class="form-control userCode" id="service_centre_code" name="row[service_centre_code]" value="{$code}" data-rule="required;length(7)" />
+        </div>
+        <div class="col-sm-1"><a class="btn btn-info" id="is_service_centre_code">{:__('Verify')}</a></div>
+        <label id='service_centre_name' for="service_centre_name" class="control-label col-xs-12 col-sm-3"  style="text-align:left;color:red">{$name}</label>
+    </div>
+    <div class="form-group">
+        <label for="manage_user_code" class="control-label col-xs-12 col-sm-2">{:__('Manage user code')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input type="text" class="form-control" id="manage_user_code" name="row[manage_user_code]" value="{$code}" data-rule="required;length(7)" />
+        </div>
+        <div class="col-sm-1"><a class="btn btn-info" id="is_manage_user_code">{:__('Verify')}</a></div>
+        <label id='manage_user_name' for="manage_user_name" class="control-label col-xs-12 col-sm-3"  style="text-align:left;color:red">{$name}</label>
+    </div>
+    <div class="form-group">
+        <label for="c-user_area" class="control-label col-xs-12 col-sm-2">{:__('User_area')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select id="c-user_area"  data-rule="required" class="form-control selectpicker" name="row[user_area]">
+                {foreach name="userAreaList" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="grade_code" class="control-label col-xs-12 col-sm-2">{:__('Grade_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control selectpicker" name="row[grade_code]" data-rule="required">
+                {foreach name="gradeList" item="vo"}
+                    <option value="{$vo.grade_code}">{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="bank_code" class="control-label col-xs-12 col-sm-2">{:__('Bank_code')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control selectpicker" name="row[bank_code]" data-rule="required">
+                {foreach name="bankList" item="vo"}
+                    <option value="{$vo.bank_code}">{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="open_bank_name" class="control-label col-xs-12 col-sm-2">{:__('Open_bank_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="open_bank_name" data-rule="length[~30]" class="form-control" type="text" name="row[open_bank_name]" value=""/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="bank_account" class="control-label col-xs-12 col-sm-2">{:__('Bank_account')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="bank_account" data-rule="required;integer;length[12~19]" class="form-control" type="text" name="row[bank_account]" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="user_name" class="control-label col-xs-12 col-sm-2">{:__('User name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="user_name" name="row[user_name]" autocomplete="off" value="" data-rule="required;length[~16]" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="control-label col-xs-12 col-sm-2">{:__('Password')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="password" name="row[password]" autocomplete="new-password" value="" data-rule="{:__('Password')}: required; password;min[7]" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="verify_password" class="control-label col-xs-12 col-sm-2">{:__('Verify password')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="verify_password" name="verify_password" autocomplete="off" value="" data-rule="{:__('Verify password')}: required; match(row[password])" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="second_pass_word" class="control-label col-xs-12 col-sm-2">{:__('Second password')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="second_pass_word" name="row[second_pass_word]" autocomplete="off" value="" data-rule="{:__('Second password')}:required; password" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="verify_second_password" class="control-label col-xs-12 col-sm-2">{:__('Verify second password')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="password" class="form-control" id="verify_second_password" name="verify_password" autocomplete="off" value="" data-rule="{:__('Verify second password')}: required; match(row[second_pass_word])" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="id_card" class="control-label col-xs-12 col-sm-2">{:__('Id card')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="id_card" class="form-control" id="id_card" name="row[id_card]" autocomplete="id_card" value="" data-rule="required;IDcard" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="phone_number" class="control-label col-xs-12 col-sm-2">{:__('Phone number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="phone_number" class="form-control" id="phone_number" name="row[phone_number]" autocomplete="phone_number" value="" data-rule="required;mobile" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="receive_address" class="control-label col-xs-12 col-sm-2">{:__('Receive address')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="receive_address" class="form-control" id="receive_address" name="row[receive_address]" autocomplete="receive_address" value="" data-rule="required;length(~60)" />
+        </div>
+    </div>
+    <div class="form-group layer-footer" style="display:block">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
